@@ -14,9 +14,8 @@ public:
             check_d = 1;
         else 
             return dp[num] = 2;
-        if (rem == 2 || check_d == 2) return dp[num] = 2;
-        if (rem == 1 || check_d == 1)
-            return dp[num] = 1;
+       if (rem == 2 || check_d == 2) return dp[num] = 2;
+        if (rem == 1 || check_d == 1) return dp[num] = 1;
 
         return dp[num] = 0;
     }
