@@ -1,15 +1,21 @@
 class Solution {
 public:
+    int solve(int i,vector<int>& nums, int target ,int n, vector<int>&dp) {
+        if(i==n-1) return dp[i]= 0;
+        int result=INT_MIN;
+        if(dp[i]!=INT_MIN) return dp[i];
+        for(int j=i+1; j<n; j++) {
+          if(abs(nums[i]-nums[j]) <= target) {
+            int temp=1+solve(j, nums, target, n ,dp);
+            result=max(result,temp);
+          }
+        }
+    return dp[i]=result;                
+    }
     int maximumJumps(vector<int>& nums, int target) {
         int n = nums.size();
-        vector<int> dp(n, -1);
-        dp[0]=0;
-        for(int i=1; i<n; i++) {
-            for(int j=0; j<i; j++) {
-                if(abs(nums[i]-nums[j]) <= target && dp[j]>-1) 
-                    dp[i] = max(dp[i], 1+dp[j]);
-            }
-        }
-        return dp[n-1];
+        vector<int> dp(n, INT_MIN);
+        int result= solve(0, nums, target, n, dp);
+        return result < 0 ?-1 : result;
     }
 };
