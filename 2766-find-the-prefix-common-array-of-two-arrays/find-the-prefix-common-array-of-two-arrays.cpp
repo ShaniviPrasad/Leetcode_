@@ -12,8 +12,8 @@ public:
             else{
                 mp[A[i]]++;
                 mp[B[i]]++;
-                if(mp[A[i]]==2){count++;}
-                if(mp[B[i]]==2){count++;}
+                if(mp[A[i]]==2)count++;
+                if(mp[B[i]]==2)count++;
             }
             A[i]=count;
         }
