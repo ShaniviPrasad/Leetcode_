@@ -4,7 +4,6 @@ public:
         int n=nums.size();
         vector<int>prefixp(n);
         vector<int>suffixp(n);
-        vector<int>ans(n);
         int p=nums[0];
         prefixp[0]=1;
         for(int i=1; i<n; i++){
@@ -18,8 +17,8 @@ public:
             p*=nums[i];
         }
         for(int i=0; i<n; i++){
-           ans[i]=prefixp[i]*suffixp[i];
+           prefixp[i]=prefixp[i]*suffixp[i];
         }
-        return ans;
+        return prefixp;
     }
 };
