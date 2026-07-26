@@ -2,6 +2,7 @@ class Solution {
 public:
     vector<int>ans;
      void arr(int n) {
+        ans.clear();
         while(n>0){
             ans.push_back(n%10);
             n/=10;
