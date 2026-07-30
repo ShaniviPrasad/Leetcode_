@@ -5,8 +5,7 @@ public:
         list<int>l;
         vector<int>ans;
         while(j<nums.size()){
-            if(l.size()<0) l.push_back(nums[j]);
-            while(l.size()>0 && l.back()<nums[j]){
+            while(!l.empty() && l.back()<nums[j]){
                 l.pop_back();
             }
             l.push_back(nums[j]);
