@@ -7,10 +7,10 @@ public:
       for(int j=0; j<n; j++){
         if(board[row][j]=='Q') return false;
       }
-      for(int i=row, j=col; i>=0 && j>=0; i--, j--){
+      for(int i=row-1, j=col-1; i>=0 && j>=0; i--, j--){
         if(board[i][j]=='Q') return false;
       }
-      for(int i=row, j=col; i>=0 && j<n; i--, j++){
+      for(int i=row-1, j=col+1; i>=0 && j<n; i--, j++){
         if(board[i][j]=='Q') return false;
       }
       return true;
