@@ -18,7 +18,7 @@ public:
                 int nr=r+dr[i];
                 int nc=c+dc[i];
                 if(nr>=0 && nc>=0 && nr<n && nc<m){
-                   int effort =max(diff,abs(heights[nr][nc]-heights[r][c])); 
+                   int effort =max(abs(heights[nr][nc]-heights[r][c]),diff); 
                    if(dist[nr][nc]>effort){
                     dist[nr][nc]=effort;
                     pq.push({effort,{nr, nc}});
